@@ -4,7 +4,7 @@ p = turtle.Pen()
 turtle.bgcolor('black')
 sides = 6
 colors = ['blue', 'yellow', 'green', 'red', 'orange', 'purple']
-for x in range(360):
+for x in range(1000):
     p.pencolor(colors[x % sides])
     p.forward(x * 3 / sides + x)
     p.left(360 / sides + 1)
