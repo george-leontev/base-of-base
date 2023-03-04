@@ -1,0 +1,27 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]}]}}
+
+#!csharp
+
+Enumerable.Range(1, 2).Sum()
+
+#!csharp
+
+string.Concat("45385593107843568".Select(s => s < '5' ? "0" : "1"))
+
+#!csharp
+
+new object[] {"5", "0", 9, 3, 2, 1, "9", 6, 7}
+    .Select(o => o.GetType() == typeof(string) ? int.Parse((string)o) : (int)o)
+    .Sum()
+
+#!csharp
+
+var sheeps = new bool[] { true, false, true };
+
+sheeps.Count(s => s)
+
+#!csharp
+
+35231.ToString().Reverse().Select(c => c - '0')
