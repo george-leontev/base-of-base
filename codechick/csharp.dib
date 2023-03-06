@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","aliases":["c#","C#"],"languageName":"C#"},{"name":"vscode","aliases":["frontend"]},{"name":"pwsh","aliases":["powershell"],"languageName":"PowerShell"},{"name":".NET","aliases":[]},{"name":"fsharp","aliases":["f#","F#"],"languageName":"F#"},{"name":"html","aliases":[],"languageName":"HTML"},{"name":"javascript","aliases":["js"],"languageName":"JavaScript"},{"name":"kql","aliases":[],"languageName":"KQL"},{"name":"mermaid","aliases":[],"languageName":"Mermaid"},{"name":"sql","aliases":[],"languageName":"SQL"},{"name":"value","aliases":[]},{"name":"webview","aliases":[]}]}}
 
 #!csharp
 
@@ -12,16 +12,143 @@ string.Concat("45385593107843568".Select(s => s < '5' ? "0" : "1"))
 
 #!csharp
 
-new object[] {"5", "0", 9, 3, 2, 1, "9", 6, 7}
+new object{} {"5", "0", 9, 3, 2, 1, "9", 6, 7}
     .Select(o => o.GetType() == typeof(string) ? int.Parse((string)o) : (int)o)
     .Sum()
 
 #!csharp
 
-var sheeps = new bool[] { true, false, true };
+var sheeps = new bool{} { true, false, true };
 
 sheeps.Count(s => s)
 
 #!csharp
 
 35231.ToString().Reverse().Select(c => c - '0')
+
+#!csharp
+
+"I love arrays they are my favorite".Split()
+
+#!csharp
+
+Enumerable.Range(0, 0).Select(s => $"{++s} sheep...").Aggregate((p, n) => $"{p}{n}")
+
+#!csharp
+
+/*
+Assert.AreEqual(new[] { "Open", "Senior", "Open", "Senior" }, Kata.OpenOrSenior(new[] { new[] { 45, 12 }, new[] { 55, 21 }, new[] { 19, 2 }, new[] { 104, 20 } }));
+Assert.AreEqual(new[] { "Open", "Open", "Open", "Open" }, Kata.OpenOrSenior(new[] { new[] { 3, 12 }, new[] { 55, 1 }, new[] { 91, -2 }, new[] { 54, 23 } }));
+Assert.AreEqual(new[] { "Senior", "Open", "Open", "Open" }, Kata.OpenOrSenior(new[] { new[] { 59, 12 }, new[] { 45, 21 }, new[] { -12, -2 }, new[] { 12, 12 } }));
+*/
+
+var input = new[] { new[] { 3, 12 }, new[] { 55, 1 }, new[] { 91, -2 }, new[] { 54, 23 } };
+
+input.Select(s => s[0] >= 55 && s[1] > 7 ? "Senior" : "Open")
+
+#!csharp
+
+var input = new object[]{"Hello", "Goodbye", "Hello Again"};
+input.Where((e, i) => i % 2 == 0)
+    
+
+#!csharp
+
+var name = "Daniel";
+var owner = "Daniel";
+
+return $"Hello {(name == owner ? "boss" : "guest")}";
+
+#!csharp
+
+var n = 5;
+var str = "Hello";
+
+string.Concat(Enumerable.Range(1, n).Select(s => str))
+
+#!csharp
+
+var str = "adc";
+var ending = "dc";
+
+
+Console.Write(str.EndsWith(ending));
+
+#!csharp
+
+var s = "No offense but,\nYour writing is among the worst I've ever read";
+
+string.Concat(s.Where(s => !new[] { 'a', 'e', 'o', 'u', 'i'}.Contains(char.ToLower(s))))
+
+#!csharp
+
+var s = default(double);
+var k = 1.0;
+
+for (var i = 1; i <= 5; i++)
+{
+    s = s + 1 / k;
+    k = k + 3;
+}
+
+Console.WriteLine($"{s:f2}")
+
+#!csharp
+
+var n = 10;
+var d = 0;
+
+if (n >= 3 && n < 7)
+{
+    d = 20;
+} 
+if(n >= 7)
+{
+    d = 50;
+}
+
+Console.Write(n * 40 - d);
+
+#!csharp
+
+while (i < 5)
+{
+    s = s + 1 / (i + 3);
+}
+
+#!csharp
+
+string.Concat("String".Select( s => $"{s}{s}"))
+
+#!csharp
+
+var phrase = "How can mirrors be real if our eyes aren't real";
+
+string.Join(' ', phrase.Split().Select(s => $"{char.ToUpper(s[0])}{s.Substring(1)}"))
+
+#!csharp
+
+var score  = 60;
+return score switch {
+    >= 0 and < 60 => 'F',
+    < 70 => 'D',
+    < 80 => 'C',
+    < 90 => 'B',
+    <= 100 => 'A',
+    _ => char.MinValue
+};
+
+#!csharp
+
+var a = new object[]{1,2,3,4,5,6,7,8,8,7,5,4,3,4,5,6,67,5,5,3,3,4,2,34,234,23,4,234,324,324,"needl1e",1,2,3,4,5,5,6,5,4,32,3,45,54};
+var j = Array.FindIndex(a, default, i => i.GetType() == typeof(string) && (string)i == "needle");
+
+j
+
+#!csharp
+
+using System.Globalization;
+
+var s = "RqaEzty";
+
+string.Join('-', s.Select((c, i) => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(string.Concat(Enumerable.Repeat(char.ToLower(c), i + 1))) ))
