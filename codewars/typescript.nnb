@@ -1,0 +1,38 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "function gooseFilter (birds: string[]): string[] {\r\n    const geese: string[] = [\"African\", \"Roman Tufted\", \"Toulouse\", \"Pilgrim\", \"Steinbacher\"];\r\n    \r\n    return birds.filter(b => !geese.includes(b));\r\n}\r\n\r\n  gooseFilter([\"Mallard\", \"Hook Bill\", \"African\", \"Crested\", \"Pilgrim\", \"Toulouse\", \"Blue Swedish\"]);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[32m'Mallard'\u001b[39m,",
+                                "  \u001b[32m'Hook Bill'\u001b[39m,",
+                                "  \u001b[32m'Crested'\u001b[39m,",
+                                "  \u001b[32m'Blue Swedish'\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
