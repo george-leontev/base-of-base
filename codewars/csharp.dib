@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[]},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[]},{"name":"webview","aliases":[]}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[]},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","aliases":["js"],"languageName":"JavaScript"},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[]},{"name":"webview","aliases":[]}]}}
 
 #!csharp
 
@@ -158,3 +158,47 @@ string.Join('-', s.Select((c, i) => CultureInfo.CurrentCulture.TextInfo.ToTitleC
 var s = 1.09;
 
 (s * 1000) / 36
+
+#!csharp
+
+using System;
+using System.Linq;
+
+public class Kata
+{
+  public static int PositiveSum(int[] arr)
+  {
+    return arr.Where(e => e > 0).Sum();
+  }
+}
+
+Console.WriteLine(
+    Kata.PositiveSum(new int[]{-1, 2, 3, 4, -5})
+);
+
+#!csharp
+
+public class SumDigPower {
+    
+    public static long[] SumDigPow(long a, long b) 
+    {
+        for (var i = 135; i <= 135; i++)
+        {
+            var n = i;
+            var acc = new List<int> {};
+            
+            while(n > 0) 
+            {
+                var d = n % 10;
+                acc.Insert(0, d);
+                n = n / 10; 
+            }
+            
+            Console.Write(acc.Select((v, i) => Math.Pow(v, i + 1)).Sum() );
+        }
+       
+        return new [] { 0L };
+    }
+}
+
+SumDigPower.SumDigPow(1, 100)

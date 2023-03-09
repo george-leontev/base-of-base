@@ -328,6 +328,171 @@
                     ]
                 }
             ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function solution(nums: number[]): number[] {\r\n    return nums.sort((a, b) => a - b);\r\n}\r\n\r\nsolution([1, 2, 10, 50, 5])"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[33m1\u001b[39m,",
+                                "  \u001b[33m2\u001b[39m,",
+                                "  \u001b[33m5\u001b[39m,",
+                                "  \u001b[33m10\u001b[39m,",
+                                "  \u001b[33m50\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function divisors(n: number) {\r\n    let count = 1;\r\n    let divider = 1;\r\n\r\n    while (divider < n) {\r\n        if (n % divider === 0) {\r\n            count++;\r\n        }\r\n        divider++;\r\n    }\r\n\r\n    return count;\r\n}\r\n\r\ndivisors(64)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m7\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function isUpperCase(str: string) {\r\n    return Array.from(str).every(c => c === c.toUpperCase());\r\n}\r\n\r\nisUpperCase('DONALD')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "export function main (verb: string, noun: string): string {\r\n  return `${verb.trim()} ${noun.trim()}`;\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function duplicateEncode(word: string){\r\n    const arr = Array.from(word.toLowerCase());\r\n\r\n    return arr\r\n        .map(s => arr.reduce((c, v) => (v === s ? c + 1 : c), 0))\r\n        .map(n => n === 1 ? '(' : ')')\r\n        .join('')\r\n}\r\n\r\nduplicateEncode(\"Success\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m')())())'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function checkForFactor(base: number, factor: number) {\r\n    return base % factor === 0;\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function toAlternatingCase(s: string): string {\r\n    return Array.from(s).map(c => c === c.toLowerCase() ? c.toUpperCase() : c.toLowerCase()).join('');\r\n}\r\n\r\ntoAlternatingCase(\"HeLLo WoRLD\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'hEllO wOrld'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
