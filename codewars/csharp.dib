@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[]},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","aliases":["js"],"languageName":"JavaScript"},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[]},{"name":"webview","aliases":[]}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[],"languageName":null},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[],"languageName":null},{"name":"webview","aliases":[]}]}}
 
 #!csharp
 
@@ -202,3 +202,36 @@ public class SumDigPower {
 }
 
 SumDigPower.SumDigPow(1, 100)
+
+#!csharp
+
+public class Kata
+{
+  public static string[] TowerBuilder(int nFloors)
+  {
+    var w = 2 * nFloors - 1;
+
+    return Enumerable.Range(0, nFloors).Select( i => {
+        var k  = (w - (2 * i + 1)) / 2;
+        var spaces = new string(' ', k);
+
+        return $"{spaces}{new string('*', (2 * i + 1))}{spaces}";
+    }).ToArray();
+  }
+}
+Kata.TowerBuilder(6)
+
+#!csharp
+
+public static class Kata
+{
+  public static int CountSmileys(string[] smileys) 
+  {
+
+     return smileys.Count(s => new [] { ":)", ":D", ";-D" , ":~)", ";~D" }.Contains(s));
+  }
+}
+
+var c = Kata.CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" });
+
+c
