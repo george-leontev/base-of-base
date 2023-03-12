@@ -1,6 +1,6 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[],"languageName":null},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[],"languageName":null},{"name":"webview","aliases":[]}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"C#","aliases":["c#","C#"]},{"name":"vscode","aliases":["frontend"],"languageName":null},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":".NET","aliases":[]},{"name":"fsharp","languageName":"F#","aliases":["f#","F#"]},{"name":"html","languageName":"HTML","aliases":[]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"kql","languageName":"KQL","aliases":[]},{"name":"mermaid","languageName":"Mermaid","aliases":[]},{"name":"sql","languageName":"SQL","aliases":[]},{"name":"value","aliases":[],"languageName":null},{"name":"webview","aliases":[]}]}}
 
 #!csharp
 
@@ -235,3 +235,86 @@ public static class Kata
 var c = Kata.CountSmileys(new string[] { ":D", ":~)", ";~D", ":)" });
 
 c
+
+#!csharp
+
+public class TwiceAsOldSolution
+{
+    public static int TwiceAsOld(int dadYears, int sonYears)
+    {
+        return Math.Abs(dadYears - 2 * sonYears);
+    }
+}
+
+Console.WriteLine(TwiceAsOldSolution.TwiceAsOld(45, 30))
+
+#!csharp
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Kata {
+  public static object DeleteNth(int[] arr, int x) {
+
+    var a =  arr
+        .Select((a, i) => 
+            new { 
+                Item = a, 
+                Count = arr.Count(e => e == a),
+                Pos = i + 1
+            }
+        ).Where(b => !(b.Count > x && b.Pos > x));
+        
+    
+
+    return a;
+  }
+}
+
+// var expected = new int[] {1, 1, 3, 3, 7, 2, 2, 2};
+
+Kata.DeleteNth(new int[] {1,1,3,3,7,2,2,2,2}, 3);
+
+// var expected = new int[] {20, 37, 21};
+
+// Kata.DeleteNth(new int[] {20, 37, 20, 21}, 1)
+
+#!csharp
+
+public class Kata
+{
+  public static int[] ArrayDiff(int[] a, int[] b)
+  {
+        return a.Where( i => !b.Contains(i)).ToArray();
+  }
+}
+
+var a = Kata.ArrayDiff(new int[] {1, 2, 3}, new int[] {1, 2});
+a
+
+#!csharp
+
+public class Kata
+{
+  public static bool IsAnagram(string test, string original)
+  {
+    return test.Length == original.Length && test.All(c => original.Contains(c, StringComparison.CurrentCultureIgnoreCase));
+  }
+}
+
+Kata.IsAnagram("Buckethead", "DeathCubeK")
+
+#!csharp
+
+public class Kata
+{
+  public static double SumArray(double[] array)
+  {
+    return array.Sum();
+  }
+}
+
+var s =Kata.SumArray(new double[] {});
+
+s
