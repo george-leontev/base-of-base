@@ -493,6 +493,122 @@
                     ]
                 }
             ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function noSpace(x: string): string {\r\n\r\n    return x.replace(/\\s/g, '');\r\n}\r\n\r\nnoSpace('8 j 8   mBliB8g  imjB8B8  jl  B');"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'8j8mBliB8gimjB8B8jlB'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const stockList = (listOfArt: string[], listOfCat: string[]): string => {\r\n    if(listOfArt.length === 0 || listOfCat.length === 0) {\r\n        return '';\r\n    }\r\n\r\n    return listOfCat\r\n        .map(c => `(${c} : ${listOfArt.filter(a => a.startsWith(c)).map(a => parseInt(a.split(' ')[1])).reduce((p, c) => p + c, 0)})`)\r\n        .reduce((p, c) => `${p} - ${c}`)\r\n}\r\n\r\nconst b = [\"BBAR 150\", \"CDXE 515\", \"BKWR 250\", \"BTSQ 890\", \"DRTY 600\"];\r\nconst c = [\"X\", \"Z\", \"T\", \"Y\"];\r\n\r\nstockList(b, c)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'(X : 0) - (Z : 0) - (T : 0) - (Y : 0)'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function basicOp(operation: string, value1: number, value2: number): number {\r\n\r\n    return eval(`${value1} ${operation} ${value2}`);\r\n}\r\n\r\nbasicOp('+', 4, 7);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m11\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function strCount(str: string, letter: string): number {\r\n\r\n    return Array.from(str)\r\n        .filter(c => c === letter)\r\n        .reduce(p => p + 1, 0);\r\n}\r\n\r\nstrCount('Hello', 'l');"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m2\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
