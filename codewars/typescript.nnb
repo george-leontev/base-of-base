@@ -586,6 +586,13 @@
             "source": [
                 "function strCount(str: string, letter: string): number {\r\n\r\n    return Array.from(str)\r\n        .filter(c => c === letter)\r\n        .reduce(p => p + 1, 0);\r\n}\r\n\r\nstrCount('Hello', 'l');"
             ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function longestConsec(strarr: string[], k: number): string {\r\n    let max_len: number = Number.MIN_VALUE;\r\n    let result: string = ''\r\n\r\n    if (k > strarr.length) {\r\n        return result;\r\n    }\r\n    \r\n    for (let i = 0; i < strarr.length; i++) {\r\n        let acc = '';\r\n        const high_bound = (k + i > strarr.length  ? strarr.length : k + i);\r\n    \r\n        for (let j = i; j < high_bound; j++) {\r\n            acc = acc + strarr[j]\r\n        }\r\n\r\n        if (max_len < acc.length) {\r\n            max_len = acc.length;\r\n            result = acc;\r\n        }\r\n    }\r\n\r\n    return result;\r\n}\r\n\r\n\r\nlongestConsec([\"zone\", \"abigail\", \"theta\", \"form\", \"libe\", \"zas\"], 2)\r\n\r\nlongestConsec([\"ejjjjmmtthh\", \"zxxuueeg\", \"aanlljrrrxx\", \"dqqqaaabbb\", \"oocccffuucccjjjkkkjyyyeehh\"], 1)\r\n\r\n\r\nlongestConsec([\"it\", \"wkppv\", \"ixoyx\", \"3452\", \"zzzzzzzzzzzz\"], 3)\r\n\r\n\r\nlongestConsec([\"zone\", \"abigail\", \"theta\", \"form\", \"libe\", \"zas\", \"theta\", \"abigail\"], 10)"
+            ],
             "outputs": [
                 {
                     "items": [
@@ -603,7 +610,7 @@
                         {
                             "mime": "text/plain",
                             "value": [
-                                "\u001b[33m2\u001b[39m"
+                                "\u001b[32m''\u001b[39m"
                             ]
                         }
                     ]
