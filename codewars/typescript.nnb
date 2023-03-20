@@ -645,6 +645,254 @@
                     ]
                 }
             ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const distinct = (a: number[]): number[] => {\r\n\r\n    return a.filter((v, i) => a.lastIndexOf(v) === i);\r\n}\r\n\r\ndistinct([1, 2])"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[33m1\u001b[39m,",
+                                "  \u001b[33m2\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const encryptThis = (str: string): string => {\r\n    if(str === '') {\r\n         return '';\r\n    }\r\n    \r\n    const words = str.split(' ');\r\n\r\n    return words.map(w => {\r\n        const symbols = [...w.slice(1)];\r\n        if (w.length > 1) {\r\n            const t = symbols[symbols.length - 1]  \r\n            symbols[symbols.length - 1] = symbols[0]\r\n            symbols[0] = t\r\n        }\r\n\r\n        return w.charCodeAt(0) + symbols.join('');\r\n    }).join(' ');\r\n}\r\n\r\n\r\nencryptThis(\"\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m''\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function angle(n: number): number {\r\n    return (n-2) * 180;\r\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// https://www.codewars.com/kata/5552101f47fc5178b1000050/typescript\r\n\r\nclass G964 {\r\n\r\n    public static digPow = (n: number, p: number) => {\r\n        let t = n;\r\n        let digits: number[] = []\r\n        let sum = 0;\r\n\r\n        while (t > 0) {\r\n            digits.push(t % 10);\r\n            t = (t / 10) >> 0\r\n        }\r\n        digits.reverse()\r\n\r\n         for (const [i, d] of digits.entries()) {\r\n            sum += d ** (p + i);\r\n        }\r\n        \r\n        const k = (sum / n) >> 0\r\n\r\n        return n * k === sum ? k : -1;\r\n    }\r\n}\r\n\r\nG964.digPow(114, 3);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m9\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "`${12345}`.split('')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "[",
+                                "  \u001b[32m'1'\u001b[39m,",
+                                "  \u001b[32m'2'\u001b[39m,",
+                                "  \u001b[32m'3'\u001b[39m,",
+                                "  \u001b[32m'4'\u001b[39m,",
+                                "  \u001b[32m'5'\u001b[39m",
+                                "]"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function get_age(age: string): number {\r\n    return Number(age.slice(0, 1))\r\n}\r\n\r\n get_age(\"2 years old\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m2\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function persistence(num: number): number {\r\n\r\n    let n = num;\r\n    let counter = 0;\r\n    let product = 1;\r\n\r\n    do {\r\n        product = 1\r\n        while (n > 0) {\r\n            let d = n % 10;\r\n            product = product * d\r\n            n = (n / 10) >> 0;\r\n        }\r\n        counter += 1;\r\n        n = product\r\n    } while (product > 9)\r\n\r\n    return product === num ? 0 : counter;\r\n}\r\n\r\npersistence(4);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m0\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "const nbYear = (p0: number, percent: number, aug: number, p: number): number => {\r\n    let result = p0;\r\n    let years = 0;\r\n\r\n    do {\r\n       \r\n        years++;\r\n        result =  Math.floor(result +result * (percent / 100) + aug);\r\n        \r\n    } while(result < p)\r\n\r\n    \r\n    return years;\r\n}\r\n\r\nnbYear(1500000, 0, 10000, 2000000)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33m50\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function getDrinkByProfession(profession: string): string {\r\n    const dict: { [key: string]: string } = {\r\n        \"jabroni\": \"Patron Tequila\",\r\n        \"school counselor\": \"Anything with Alcohol\",\r\n        \"programmer\": \"Hipster Craft Beer\",\r\n        \"bike gang member\": \"Moonshine\",\r\n        \"politician\": \"Your tax dollars\",\r\n        \"rapper\": \"Cristal\"\r\n    }\r\n\r\n    return (dict[profession.toLowerCase()] ?? \"Beer\") as string;\r\n}\r\n\r\ngetDrinkByProfession(\"RAPPer\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'Cristal'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
