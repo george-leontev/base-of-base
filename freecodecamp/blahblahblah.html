@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Click a word in the paragraph and highlight it.</title>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+</head>
+
+<body>
+    <p id="paragraph">
+            Авада кедавра
+    </p>
+    <p id="paragraph">
+        Экспелиармус
+    </p>
+    <script>
+        $( document ).ready(
+            function() {
+                const words = $("#paragraph").first().text().split( /\s+/ );
+                const text = words.join( "</span> <span>" );
+                $( "#paragraph" ).first().html( "<span>" + text + "</span>" );
+                $( "span" ).on( "click", function() {
+                $( this ).css( "background-color", "green" );
+                });
+            }
+        )
+    </script>
+</body>
+
+</html>
