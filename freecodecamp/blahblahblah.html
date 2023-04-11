@@ -8,17 +8,14 @@
 
 <body>
     <p id="paragraph">
-            Авада кедавра
-    </p>
-    <p id="paragraph">
-        Экспелиармус
+        ж( у | ю )ри
     </p>
     <script>
         $( document ).ready(
             function() {
-                const words = $("#paragraph").first().text().split( /\s+/ );
+                const words = $("у").first().text().split( /\s+/ );
                 const text = words.join( "</span> <span>" );
-                $( "#paragraph" ).first().html( "<span>" + text + "</span>" );
+                $( "у" ).first().html( "<span>" + text + "</span>" );
                 $( "span" ).on( "click", function() {
                 $( this ).css( "background-color", "green" );
                 });
