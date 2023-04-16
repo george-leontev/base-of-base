@@ -47,3 +47,20 @@ body {
     content: "";
     width: 350px;
 }
+
+.final {
+    text-align: center;
+    color: blue;
+
+}
+.label {
+    border: 2px solid black;
+    width: 250px;
+    margin: 10px auto;
+    padding: 0 7px;
+    border-radius: 7px;
+}
+
+.bold {
+    font-weight: 800;
+}

@@ -81,22 +81,21 @@ p {
     justify-content: flex-end;
 }
 
-
-
-
-
-
-
-.loader {
-    border: 16px solid #f8f8f9e8; /* Light grey */
-    border-top: 16px solid #04cafc; /* Blue */
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    animation: spin 0.07s linear infinite;
+.indent {
+    margin-left: 1em;
   }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+.daily-value p:not(.no-divider) {
+    border-bottom: 1px solid #888989;
+}
+
+.double-indent {
+    margin-left: 2em;
+}
+
+.note {
+    font-size: 0.6rem;
+    margin: 5px 0;
+    padding: 0 8px;
+    text-indent: -8px;
+}
