@@ -3,16 +3,16 @@ var
   s: integer;
   t: integer;
 begin
-  readln(s);
-  readln(t);
-  
-  if (abs(s) > 3) or (abs(t) > 3) then 
+  Readln(s);
+  Readln(t);
+
+  if (abs(s) > 3) or (abs(t) > 3) then
   begin
-    writeln ('YES');
+    Writeln ('YES');
   end
   else
   begin
-    writeln('NO');
+    Writeln('NO');
   end;
-  
+
 end.
